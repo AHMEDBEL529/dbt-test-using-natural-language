@@ -24,6 +24,7 @@ resource "google_project_service" "bigquery" {
 # Create the BigQuery Dataset
 resource "google_bigquery_dataset" "mydataset" {
   dataset_id = "mydataset"
+  project    = var.gcp_project_id
   location   = "US"
 }
 
@@ -49,6 +50,8 @@ resource "google_project_iam_member" "job_user" {
 # Create the Service Account Key
 resource "google_service_account_key" "key" {
   service_account_id = google_service_account.bq_service_account.id
+  public_key_type    = "TYPE_X509_PEM_FILE"
+  private_key_type   = "TYPE_GOOGLE_CREDENTIALS_FILE"
 }
 
 # Save the keyfile to your local directory
@@ -57,3 +60,18 @@ resource "local_file" "keyfile" {
   filename = "${path.module}/my-bq-service-account-key.json"
 }
 
+# Output the service account key file path
+output "service_account_key_file" {
+  value = "${path.module}/my-bq-service-account-key.json"
+}
+
+# Set the GCP project ID as an environment variable
+variable "gcp_project_id_env" {
+  type        = string
+  default     = ""
+  description = "The GCP project ID set as an environment variable"
+}
+
+provider "google" {
+  project = var.gcp_project_id
+}
