@@ -31,7 +31,13 @@ cd ./test_db
 
 # Load employees.sql into MySQL
 log "Loading employees.sql into MySQL"
-/usr/bin/mysql -u root < employees.sql
+sudo /usr/bin/mysql -u root < employees.sql
+
+# Create dbt_user and grant all privileges on all databases
+log "Creating dbt_user and granting all privileges on all databases"
+sudo /usr/bin/mysql -u root -e "CREATE USER 'dbt_user'@'localhost' IDENTIFIED BY 'your_password';"
+sudo /usr/bin/mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'dbt_user'@'localhost' WITH GRANT OPTION;"
+sudo /usr/bin/mysql -u root -e "FLUSH PRIVILEGES;"
 
 # Navigate back to repo dir
 log "Returning to the repo dir"
