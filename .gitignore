@@ -3,3 +3,4 @@ dbt_packages/
 logs/
 keyfile.json
 mysql_setup_dir/test_db/
+.venv
