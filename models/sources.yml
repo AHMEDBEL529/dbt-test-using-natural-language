@@ -5,7 +5,11 @@ sources:
     database: employees  # The name of the database where your source resides
     schema: employees       # The schema of your source tables
     tables:
-      - name: employees
+      - name: current_dept_emp
       - name: departments
+      - name: dept_emp
+      - name: dept_emp_latest_date
+      - name: dept_manager
+      - name: employees
       - name: salaries
       - name: titles

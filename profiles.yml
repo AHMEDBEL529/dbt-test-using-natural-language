@@ -5,8 +5,8 @@ my_dbt_project:
       type: mysql
       server: localhost
       port: 3306
-      database: employees  # Replace with your actual database name
-      schema: employees               # Change as needed
-      username: dbt_user   # Replace with your actual MySQL username
-      password:  your_password  # Replace with your actual MySQL password
+      database: employees  # The original database
+      schema: dbt_models    # The schema where dbt will create its models
+      username: dbt_user
+      password: your_password
       ssl_disabled: True
