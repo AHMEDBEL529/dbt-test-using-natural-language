@@ -6,7 +6,7 @@ my_dbt_project:
       server: localhost
       port: 3306
       database: employees  # Replace with your actual database name
-      schema: analytics               # Change as needed
+      schema: employees               # Change as needed
       username: dbt_user   # Replace with your actual MySQL username
       password:  your_password  # Replace with your actual MySQL password
       ssl_disabled: True
