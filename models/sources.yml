@@ -2,7 +2,6 @@ version: 2
 
 sources:
   - name: employees_source
-    database: employees  # The name of the database where your source resides
     schema: employees       # The schema of your source tables
     tables:
       - name: current_dept_emp

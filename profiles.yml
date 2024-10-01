@@ -5,8 +5,8 @@ my_dbt_project:
       type: mysql
       server: localhost
       port: 3306
-      database: employees  # The original database
-      schema: dbt_models    # The schema where dbt will create its models
+      database: employees  # Ensure this is correct
+      schema: dbt_models    # Schema where dbt will create its models
       username: dbt_user
       password: your_password
       ssl_disabled: True

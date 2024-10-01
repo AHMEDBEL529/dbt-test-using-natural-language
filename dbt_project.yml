@@ -31,5 +31,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   my_dbt_project:
+    +schema: dbt_models  # This specifies the schema for all models in the project
     employment_models:
       +materialized: table  # Change to view if needed
+
