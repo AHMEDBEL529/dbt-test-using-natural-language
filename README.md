@@ -13,3 +13,14 @@ Try running the following commands:
 - Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
 - Find [dbt events](https://events.getdbt.com) near you
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+
+
+git clone https://github.com/AHMEDBEL529/dbt-test-using-natural-language.git
+cd dbt-test-using-natural-language/
+chmod +x ./mysql_setup_dir/mysql_setup.sh
+./mysql_setup_dir/mysql_setup.sh
+apt install python3.12-venv
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install dbt-core dbt-mysql 
+dbt run
