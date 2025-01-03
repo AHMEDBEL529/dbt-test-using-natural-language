@@ -3,14 +3,6 @@
 
 Welcome to your new dbt project!
 
-## Using the Starter Project
-
-Try running the following commands:
-```bash
-dbt run
-dbt test
-```
-
 ## Setup Instructions
 
 1. Clone the repository:
